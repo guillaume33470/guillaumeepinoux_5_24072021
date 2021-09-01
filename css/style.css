@@ -1,11 +1,11 @@
 /*****google fonts******/
 @font-face {
   font-family: "styleSript";
-  src: url("css/fonts/StyleScript-Regular.ttf");
+  src: url("fonts/StyleScript-Regular.ttf");
 }
 @font-face {
   font-family: "lobster";
-  src: url("css/fonts/Lobster-Regular.ttf");
+  src: url("fonts/Lobster-Regular.ttf");
 }
 
 /*****body******/
