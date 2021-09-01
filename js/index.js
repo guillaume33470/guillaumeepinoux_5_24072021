@@ -91,7 +91,7 @@ function createPanier(event) {
                           ${dd}
                         </select>
                       </div>
-                    <button id="button_Panier" class="btn" >Ajouter au panier</button>
+                    <button onclick="ajoutmessageconfirm(event)" id="button_Panier" class="btn" >Ajouter au panier</button>
                   </article>
                 </div>`;
       popup.innerHTML = cards;
@@ -130,7 +130,8 @@ function createPanier(event) {
         } else {
           for (e = 0; e < produitLocalStorage.length; e++) {
             if (produitLocalStorage[e].id == detailProduit.id) {
-              console.log("Ce produit est déjà présent dans le panier");
+              // console.log("Ce produit est déjà présent dans le panier");
+              // alert("Ce produit est déjà présent dans le panier");
               let quantityOfProductInLocalStorage = parseInt(
                 produitLocalStorage[e].quantity
               );
@@ -142,6 +143,11 @@ function createPanier(event) {
                 "Après ajout, il y a " +
                   quantityOfProductInLocalStorage +
                   "fois ce produit dans le local storage"
+              );
+              alert(
+                "Après ajout, il y a " +
+                  quantityOfProductInLocalStorage +
+                  " fois ce produit au panier"
               );
               produitLocalStorage.splice(e, 1);
               detailProduit.quantity = quantityOfProductInLocalStorage;
@@ -165,13 +171,14 @@ function createPanier(event) {
         for (let e = 0; e < totalPriceCart.length; e++) {
           totalPrice += totalPriceCart[e];
         }
-        alert(totalPrice);
-        //Envoyer le total dans le local storage
+        alert("le montant de votre pannier est de " + totalPrice + "€");
+        // Envoyer le total dans le local storage
         localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
       });
     });
   popup.style.display = "inline-block";
 }
+
 //------------fonction du boutton fermeture de mon pop-up-----------------
 
 function closeModal() {

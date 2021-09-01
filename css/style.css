@@ -1,16 +1,17 @@
 /*****google fonts******/
 @font-face {
   font-family: "styleSript";
-  src: url("./fonts/StyleScript-Regular.ttf");
+  src: url("css/fonts/StyleScript-Regular.ttf");
 }
 @font-face {
   font-family: "lobster";
-  src: url("./fonts/Lobster-Regular.ttf");
+  src: url("css/fonts/Lobster-Regular.ttf");
 }
 
 /*****body******/
 body {
   background-color: #f4e9f2;
+  height: 100%;
 }
 /*************contain index menu*************/
 
@@ -79,26 +80,11 @@ h3 {
 
 /****header*****/
 .teddyheader {
-  color: black;
-  background-color: white;
-  background-image: url(images/backgroundnounours.webp);
+  background-image: url(./images_css/backgroundnounours.webp);
   height: 350px;
   background-position: 10%;
 }
-.meublesheader {
-  color: black;
-  background-color: white;
-  background-image: url(images/backgroundsalon.webp);
-  height: 350px;
-  background-position: 10%;
-}
-.camerasheader {
-  color: black;
-  background-color: white;
-  background-image: url(images/backgroundphoto.webp);
-  height: 350px;
-  background-position: 10%;
-}
+
 /*****logo*******/
 .logo {
   height: 100px;

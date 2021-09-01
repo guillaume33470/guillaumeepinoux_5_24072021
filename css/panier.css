@@ -8,7 +8,7 @@
 }
 /************body*********************/
 body {
-  background-image: url(images/panier-background.webp);
+  background-color: burlywood;
 }
 /***********polices********/
 
@@ -16,6 +16,7 @@ h1,
 h2 {
   font-family: "lobster";
   font-size: 1.9rem;
+  color: #fff;
 }
 
 label,
@@ -23,6 +24,7 @@ p {
   font-family: "styleSript";
   font-size: 1.5rem;
   font-weight: 600;
+  color: #fff;
 }
 
 legend {
@@ -84,6 +86,10 @@ nav {
 
 /******block panier******/
 .recapitulatif {
+  background-image: url(./images_css/téléchargement.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 28%;
   border: 1px #000 solid;
   text-align: center;
   margin-top: 200px;
