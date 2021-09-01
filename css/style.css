@@ -1,11 +1,11 @@
 /*****google fonts******/
 @font-face {
-  font-family: "styleSript";
-  src: url("fonts/StyleScript-Regular.ttf");
+  font-family: "styleScript";
+  src: url("css/StyleScript-Regular.ttf") format("ttf");
 }
 @font-face {
   font-family: "lobster";
-  src: url("fonts/Lobster-Regular.ttf");
+  src: url("css/Lobster-Regular.ttf") format("ttf");
 }
 
 /*****body******/
@@ -28,7 +28,7 @@ body {
   margin-bottom: 15px;
 }
 a {
-  font-family: "styleSript";
+  font-family: "styleScript";
   text-decoration: none;
   text-align: center;
   font-size: 1.9rem;
@@ -68,7 +68,7 @@ h4 {
   text-align: justify;
 }
 h3 {
-  font-family: "styleSript";
+  font-family: "styleScript";
   font-size: 1.5rem;
   font-weight: 600;
   margin-left: 15px;
