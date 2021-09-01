@@ -196,7 +196,7 @@ function cleararticle(event) {
   window.location.href = "panier.html";
 }
 
-/******function clear pannier********/
+/******function clear article********/
 
 function clearAll(event) {
   localStorage.removeItem("productKey");
