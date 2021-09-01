@@ -8,7 +8,7 @@
 }
 /************body*********************/
 body {
-  background-color: burlywood;
+  background-color: #f4e9f2;
 }
 /***********polices********/
 
@@ -16,7 +16,7 @@ h1,
 h2 {
   font-family: "lobster";
   font-size: 1.9rem;
-  color: #fff;
+  color: #000;
 }
 
 label,
@@ -24,7 +24,7 @@ p {
   font-family: "styleSript";
   font-size: 1.5rem;
   font-weight: 600;
-  color: #fff;
+  color: #000;
 }
 
 legend {
@@ -86,14 +86,19 @@ nav {
 
 /******block panier******/
 .recapitulatif {
-  background-image: url(./images_css/téléchargement.jpg);
-  background-size: contain;
+  background-image: url("images_css/Teddy_bear_Sea_Love.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: 28%;
+  background-position-y: 70%;
   border: 1px #000 solid;
   text-align: center;
   margin-top: 200px;
   margin-bottom: 45px;
+}
+@media (max-width: 665px) {
+  .recapitulatif {
+    background-size: contain;
+  }
 }
 
 .produit_contain\>.\<span.id\= {

@@ -1,11 +1,11 @@
 /*****google fonts******/
 @font-face {
-  font-family: "styleScript";
-  src: url("css/StyleScript-Regular.ttf") format("ttf");
+  font-family: "stylescript";
+  src: url("fonts/StyleScript-Regular.ttf");
 }
 @font-face {
   font-family: "lobster";
-  src: url("css/Lobster-Regular.ttf") format("ttf");
+  src: url("fonts/Lobster-Regular.ttf");
 }
 
 /*****body******/
@@ -28,7 +28,7 @@ body {
   margin-bottom: 15px;
 }
 a {
-  font-family: "styleScript";
+  font-family: "stylescript";
   text-decoration: none;
   text-align: center;
   font-size: 1.9rem;
@@ -68,7 +68,7 @@ h4 {
   text-align: justify;
 }
 h3 {
-  font-family: "styleScript";
+  font-family: "stylescript";
   font-size: 1.5rem;
   font-weight: 600;
   margin-left: 15px;
@@ -80,7 +80,7 @@ h3 {
 
 /****header*****/
 .teddyheader {
-  background-image: url(./images_css/backgroundnounours.webp);
+  background-image: url("images_css/backgroundnounours.webp");
   height: 350px;
   background-position: 10%;
 }
