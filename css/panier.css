@@ -1,0 +1,223 @@
+@font-face {
+  font-family: "styleSript";
+  src: url("fonts/StyleScript-Regular.ttf");
+}
+@font-face {
+  font-family: "lobster";
+  src: url("fonts/Lobster-Regular.ttf");
+}
+/************body*********************/
+body {
+  background-image: url(images/panier-background.webp);
+}
+/***********polices********/
+
+h1,
+h2 {
+  font-family: "lobster";
+  font-size: 1.9rem;
+}
+
+label,
+p {
+  font-family: "styleSript";
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+legend {
+  font-family: "styleSript";
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+#price_trash {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #000;
+}
+
+#reference {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1rem;
+  color: #000;
+}
+
+/******logo***************/
+
+.logo {
+  width: 100%;
+  height: 220px;
+  object-fit: inherit;
+  margin-bottom: 5px;
+}
+
+/****navbarre****/
+
+nav {
+  margin-top: -10%;
+}
+.index_boutton {
+  border: #a262dd 1px solid;
+  border-radius: 10px 10px 10px 10px;
+  float: right;
+  text-decoration: none;
+  color: #ffffff;
+  background: #a262dd;
+  height: 36px;
+  line-height: 33px;
+  padding: 10px 35px;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  transition: 0.5s;
+  margin: 0px 10px;
+}
+
+.index_boutton:hover {
+  background: #f43c3c;
+}
+
+.index_boutton:focus-within {
+  background: #f43c3c;
+}
+
+/******block panier******/
+.recapitulatif {
+  border: 1px #000 solid;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 45px;
+}
+
+.produit_contain\>.\<span.id\= {
+  background: #d4c1ab;
+  border-radius: 15px;
+  font-family: "lobster";
+  font-size: 1.5rem;
+  color: #000;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 15px 0px;
+  border: 1px black solid;
+  box-shadow: 5px 5px saddlebrown;
+}
+
+#productImage {
+  width: 60%;
+}
+
+/****block fomulaire*******/
+.formulaire_commande {
+  border: 1px #000 solid;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-control {
+  margin-top: 25px;
+  text-align: center;
+  margin-bottom: 2%;
+  border: 1px solid;
+  padding: 10px 20px;
+  margin: 20px 300px;
+}
+i.fas.fa-trash {
+  float: right;
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: -24px;
+}
+
+/********partie paiement*******/
+.carte {
+  display: flex;
+  justify-content: unset;
+  margin-top: 2%;
+}
+
+.paiement {
+  overflow-clip-margin: initial;
+  margin-left: 22%;
+}
+
+i {
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+/*****font awsome(icone cartes choix******/
+.fab,
+.far {
+  font-weight: 400;
+  font-size: 2.9rem;
+  background: border-box;
+  background-color: white;
+}
+/******boutton commander********************/
+#confirme_commande,
+#btn_vide_panier {
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  background: #c8ad7f;
+  color: #000;
+  font-size: 1.3rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#confirme_commande:hover,
+#btn_vide_panier:hover {
+  background: #8b4513;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+/******footer***********/
+footer {
+  margin-top: 50px;
+  padding: 20px 0px;
+  border: 3px #c8ad7f solid;
+  background-color: #c8ad7f;
+  width: 100%;
+}
+aside {
+  text-align: center;
+}
+
+.footerlink {
+  color: black;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+/******medi queries************/
+@media (max-width: 1024px) {
+  .form-control {
+    margin: 20px 3%;
+  }
+}
+
+@media (max-width: 512px) {
+  .paiement {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 512px) {
+  .carte {
+    justify-content: center;
+    padding-top: 15px;
+  }
+}

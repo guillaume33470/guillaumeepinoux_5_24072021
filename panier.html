@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="chez orinoco , payez ce qu'il vous faut"
+    />
+    <link rel="stylesheet" type="text/css" href="css/panier.css" />
+    <title>panier</title>
+  </head>
+  <body>
+    <!--header start-->
+    <header>
+      <img
+        class="logo"
+        src="images/logo.webp"
+        alt="logo de l'entreprise orinoco"
+      />
+      <a class="index_boutton" href="index.html">Accueil</a>
+    </header>
+    <!--header end-->
+    <main>
+      <!--section recap produit-->
+      <section class="recapitulatif">
+        <h1>Récapitulatif de votre commande</h1>
+        <p>
+          Veuillez vérifier votre commande ci-dessous avant de valider le
+          paiement.
+        </p>
+        <article>
+          <div id="panier_container">
+            <template id="template_empty_card">
+              <div id="empty_basket"></div>
+            </template>
+          </div>
+        </article>
+        <!--si panier vide-->
+        <div id="panier__vide"></div>
+        <!--si article dans le panier-->
+        <div id="total_price"></div>
+        <div>
+          <!--nettoyage du panier-->
+          <button
+            id="btn_vide_panier"
+            onclick="clearAll(event)"
+            ontype="button"
+          >
+            Vider le panier
+          </button>
+        </div>
+        <div id="formulaire"></div>
+      </section>
+      <!--fin de formulaire de commande-->
+    </main>
+    <footer>
+      <aside>
+        <a class="footerlink" href="#">mentions légales</a>
+        <a class="footerlink" href="index.html">contact</a>
+      </aside>
+    </footer>
+    <script src="js/panier.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8fc61f04f6.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

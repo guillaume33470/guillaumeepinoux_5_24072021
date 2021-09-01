@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Avec nos Teddys orinoco, trouvez le nounours le plus beau"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>nounours Orinoco</title>
+  </head>
+  <body>
+    <!--header start-->
+    <header class="teddyheader">
+      <img
+        class="logo"
+        src="images/logo.webp"
+        alt="logo de l'entreprise orinoco"
+      />
+      <!--navbarre-->
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="panier.html">Panier<span id="basket_total_quantity"></span></a>
+      </nav>
+    </header>
+    <!--header end-->
+    <!--main start-->
+    <body>
+      <!--recuperation de produit via index.js-->
+      <section>
+        <h1>Nos Produits</h1>
+        <!--création de la fenêtre pop-up-->
+        <div id="produit" class="nounours"></div>
+        <div id="popup">
+          <div id="popupDetail"></div>
+        </div>
+        <!--fin de la fenêtre pop-up (fenêtre pop-up)-->
+      </section>
+    </body>
+    <!--main end-->
+    <!--footer start-->
+    <footer>
+      <aside>
+        <a class="footerlink" href="#">mentions légales</a>
+        <a class="footerlink" href="#">contact</a>
+      </aside>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>
