@@ -43,13 +43,8 @@ if (produitLocalStorage === null || produitLocalStorage == "") {
     document.getElementById("panier_container").innerHTML = fullPanier;
   }
 }
-/********variables de mon formulaire à recupérer******/
-let lastName = document.getElementById("lastname");
-let firstName = document.getElementById("firstname");
-let email = document.getElementById("email");
-let adress = document.getElementById("adress");
-let town = document.getElementById("city");
-/******************************affichage de mon formulaire**************/
+
+/******************************affichage de mon formulaire**********************/
 if (produitLocalStorage == 0) {
   console.log("merci de retourner selectionner votre nounours");
   const cardForm = document.querySelector("#formulaire");
@@ -144,7 +139,7 @@ if (produitLocalStorage == 0) {
                           />
                           <i class="fab fa-cc-paypal fa-2x"></i>
                         </div>
-                        <button onclick="validation_commande(event)" id="confirme_commande" type="submit" name="commander">
+                        <button onclick="validationCommande(event)" id="confirme_commande" name="commander">
                           Commander
                         </button>
                       </form>
@@ -172,8 +167,8 @@ if (totalPrice == null) {
 
 /******function clear article**********/
 
-const viderArticleBtn = document.getElementsByClassName(".fas fa-trash");
-viderArticleBtn.addEventListener("click", cleararticle);
+// const viderArticleBtn = document.getElementsByClassName(".fas fa-trash");
+// viderArticleBtn.addEventListener("click", cleararticle);
 
 function cleararticle(event) {
   let produitLocalStorage = JSON.parse(localStorage.getItem("productKey"));
@@ -204,11 +199,72 @@ function clearAll(event) {
   window.location.href = "panier.html";
 }
 /******function clear pannier********/
-const viderpanierBtn = document.getElementsById("btn_vide_panier");
-viderpanierBtn.addEventListener("click", clearAll);
+// const viderpanierBtn = document.getElementsById("btn_vide_panier");
+// viderpanierBtn.addEventListener("click", clearAll);
 
 function clearAll(event) {
+  alert();
   localStorage.removeItem("productKey");
   localStorage.removeItem("totalPrice");
   window.location.href = "panier.html";
+}
+/******************envoie vers la page confirmation**********************/
+function validationCommande(event) {
+  alert();
+  let lastname = document.getElementById("lastname").value;
+  alert(lastname);
+  let firstname = document.getElementById("firstname").value;
+  alert(firstname);
+  let email = document.getElementById("email").value;
+  alert(email);
+  let adress = document.getElementById("adress").value;
+  alert(adress);
+  let city = document.getElementById("city").value;
+  alert(city);
+  let contact = {
+    firstName: firstName,
+    lastName: lastName,
+    address: adress,
+    city: city,
+    email: email,
+  };
+  let produitLocalStorage = JSON.parse(localStorage.getItem("productKey"));
+
+  const products = [];
+  for (p = 0; p < produitLocalStorage.length; p++) {
+    let idProduct = produitLocalStorage[p]._id;
+    products.push(idProduct);
+  }
+  console.log(products);
+
+  const elementToSend = { contact, products };
+  const url = "http://localhost:3000/api/teddies/order";
+  let data = JSON.stringify(elementToSend);
+  let fetchData = {
+    method: "POST",
+    body: data,
+    headers: { "Content-Type": "application/json" },
+  };
+  fetch(url, fetchData)
+    //Voir le resultat du serveur dans la console
+    .then(async (response) => {
+      try {
+        console.log(response);
+        const dataResponse = await response.json();
+        console.log("OK");
+        if (response.ok) {
+          //Envoyer l'id dans le local storage
+          alert(dataResponse.orderId);
+        } else {
+          console.log("KO");
+        }
+      } catch (e) {
+        console.log(e);
+        console.log("KO");
+      }
+    })
+    .catch(function (error) {
+      alert(`Erreur, impossible de transmettre la requête au serveur`);
+      console.log(error);
+    });
 }
