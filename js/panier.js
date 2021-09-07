@@ -74,7 +74,7 @@ if (produitLocalStorage == 0) {
                             id="firstname"
                             name="prenom"
                             class="form-control"
-                            placeholder="Jean"
+                            value="Jean"
                             required
                           />
                         </div>
@@ -85,7 +85,7 @@ if (produitLocalStorage == 0) {
                             id="email"
                             name="email"
                             class="form-control"
-                            placeholder="votre mail@gmail.com"
+                            value="votre mail@gmail.com"
                             required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                           />
@@ -97,7 +97,7 @@ if (produitLocalStorage == 0) {
                             id="adress"
                             name="adresse"
                             class="form-control"
-                            placeholder="32 avenue Georges Brassens"
+                            value="32 avenue Georges Brassens"
                             required
                           />
                         </div>
@@ -108,7 +108,7 @@ if (produitLocalStorage == 0) {
                             id="city"
                             name="ville"
                             class="form-control"
-                            placeholder="Bordeaux"
+                            value="Bordeaux"
                             required
                           />
                         </div>
@@ -197,7 +197,6 @@ function cleararticle(event) {
 function clearAll(event) {
   localStorage.removeItem("productKey");
   localStorage.removeItem("totalPrice");
-  localStorage.removeItem("panier");
   window.location.href = "panier.html";
 }
 /******function clear pannier********/
@@ -208,7 +207,6 @@ function clearAll(event) {
   alert();
   localStorage.removeItem("productKey");
   localStorage.removeItem("totalPrice");
-  localStorage.removeItem("panier");
   window.location.href = "panier.html";
 }
 /******************envoie vers la page confirmation**********************/
