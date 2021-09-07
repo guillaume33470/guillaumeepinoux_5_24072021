@@ -63,7 +63,7 @@ if (produitLocalStorage == 0) {
                             id="lastname"
                             name="nom"
                             class="form-control"
-                            placeholder="Dupont"
+                            value="Dupont"
                             required
                           />
                         </div>
@@ -85,7 +85,7 @@ if (produitLocalStorage == 0) {
                             id="email"
                             name="email"
                             class="form-control"
-                            placeholder="votre mail"
+                            placeholder="votre mail@gmail.com"
                             required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                           />
@@ -97,7 +97,7 @@ if (produitLocalStorage == 0) {
                             id="adress"
                             name="adresse"
                             class="form-control"
-                            placeholder="Ex: 32, avenue Georges Brassens"
+                            placeholder="32 avenue Georges Brassens"
                             required
                           />
                         </div>
@@ -108,7 +108,7 @@ if (produitLocalStorage == 0) {
                             id="city"
                             name="ville"
                             class="form-control"
-                            placeholder="Ex: Bordeaux"
+                            placeholder="Bordeaux"
                             required
                           />
                         </div>
@@ -139,7 +139,8 @@ if (produitLocalStorage == 0) {
                           />
                           <i class="fab fa-cc-paypal fa-2x"></i>
                         </div>
-                        <button onclick="validationCommande(event)" id="confirme_commande" name="commander">
+                        // ICI 
+                        <button onclick="validationCommande(event)" type="button" id="confirme_commande" name="commander">
                           Commander
                         </button>
                       </form>
@@ -196,6 +197,7 @@ function cleararticle(event) {
 function clearAll(event) {
   localStorage.removeItem("productKey");
   localStorage.removeItem("totalPrice");
+  localStorage.removeItem("panier");
   window.location.href = "panier.html";
 }
 /******function clear pannier********/
@@ -206,24 +208,21 @@ function clearAll(event) {
   alert();
   localStorage.removeItem("productKey");
   localStorage.removeItem("totalPrice");
+  localStorage.removeItem("panier");
   window.location.href = "panier.html";
 }
 /******************envoie vers la page confirmation**********************/
 function validationCommande(event) {
-  alert();
   let lastname = document.getElementById("lastname").value;
-  alert(lastname);
   let firstname = document.getElementById("firstname").value;
-  alert(firstname);
   let email = document.getElementById("email").value;
-  alert(email);
   let adress = document.getElementById("adress").value;
-  alert(adress);
   let city = document.getElementById("city").value;
-  alert(city);
   let contact = {
-    firstName: firstName,
-    lastName: lastName,
+    // ICI
+    firstName: firstname,
+    // ICI
+    lastName: lastname,
     address: adress,
     city: city,
     email: email,
@@ -232,12 +231,13 @@ function validationCommande(event) {
 
   const products = [];
   for (p = 0; p < produitLocalStorage.length; p++) {
-    let idProduct = produitLocalStorage[p]._id;
+    // ICI
+    let idProduct = produitLocalStorage[p].id;
     products.push(idProduct);
   }
   console.log(products);
-
-  const elementToSend = { contact, products };
+  // ICI
+  const elementToSend = { contact: contact, products: products };
   const url = "http://localhost:3000/api/teddies/order";
   let data = JSON.stringify(elementToSend);
   let fetchData = {
@@ -245,6 +245,7 @@ function validationCommande(event) {
     body: data,
     headers: { "Content-Type": "application/json" },
   };
+
   fetch(url, fetchData)
     //Voir le resultat du serveur dans la console
     .then(async (response) => {
