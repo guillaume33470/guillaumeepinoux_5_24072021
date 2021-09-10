@@ -139,7 +139,11 @@ if (produitLocalStorage == 0) {
                           />
                           <i class="fab fa-cc-paypal fa-2x"></i>
                         </div>
-                        // ICI 
+                        <div>
+                          <input type="checkbox" id="condbox" class="zoneDeSaisie" required/>
+                            J'ai lu et j'accepte
+                                <a href="conditions.html">les conditions générales de vente.</a>
+                        </div>
                         <button onclick="validationCommande(event)" type="button" id="confirme_commande" name="commander">
                           Commander
                         </button>
@@ -200,8 +204,6 @@ function clearAll(event) {
   window.location.href = "panier.html";
 }
 /******function clear pannier********/
-// const viderpanierBtn = document.getElementsById("btn_vide_panier");
-// viderpanierBtn.addEventListener("click", clearAll);
 
 function clearAll(event) {
   alert();
@@ -229,12 +231,10 @@ function validationCommande(event) {
 
   const products = [];
   for (p = 0; p < produitLocalStorage.length; p++) {
-    // ICI
     let idProduct = produitLocalStorage[p].id;
     products.push(idProduct);
   }
   console.log(products);
-  // ICI
   const elementToSend = { contact: contact, products: products };
   const url = "http://localhost:3000/api/teddies/order";
   let data = JSON.stringify(elementToSend);
@@ -252,8 +252,9 @@ function validationCommande(event) {
         const dataResponse = await response.json();
         console.log("OK");
         if (response.ok) {
-          //Envoyer l'id dans le local storage
+          localStorage.setItem("idresponse", dataResponse.orderId);
           alert(dataResponse.orderId);
+          window.location = "confirmation.html";
         } else {
           console.log("KO");
         }
