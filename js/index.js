@@ -36,8 +36,7 @@ fetch("http://localhost:3000/api/teddies")
         totalQuantityCart.push(totalQuantityProduct);
       }
       const totalQuantity = totalQuantityCart.reduce(reducer, 0);
-      //Afficher le total
-      document.querySelector("#basket_total_quantity").style.display = "flex";
+      //Affichage nombre de nounours dans le panier(compteur navbar)
       document.querySelector(
         "#basket_total_quantity"
       ).textContent = `${totalQuantity}`;

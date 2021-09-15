@@ -172,6 +172,15 @@ i {
   background: border-box;
   background-color: white;
 }
+/******* case à cocher conditions generales de ventes******/
+.condition_generales {
+  font-size: 1.9rem;
+  margin-bottom: 15px;
+}
+.conditions_html:hover {
+  color: #2be7ff;
+  font-weight: 900;
+}
 /******boutton commander********************/
 #confirme_commande,
 #btn_vide_panier {

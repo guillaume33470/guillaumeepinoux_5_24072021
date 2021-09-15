@@ -13,7 +13,7 @@ body {
   background-color: #f4e9f2;
   height: 100%;
 }
-/*************contain index menu*************/
+/************* index menu*************/
 
 .menu {
   display: flex;
@@ -42,16 +42,6 @@ a {
 .index_produits {
   margin-top: 20%;
   margin-bottom: 18%;
-}
-/*******media queries (index page)******/
-@media (max-width: 612px) {
-  .menu {
-    flex-direction: column;
-    width: 100%;
-  }
-  .menu_prod {
-    width: 100%;
-  }
 }
 
 /****polices*****/
@@ -116,6 +106,13 @@ nav a:hover {
 nav a:focus-within {
   background: #f43c3c;
 }
+#basket_total_quantity {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: pink;
+  border-radius: 50%;
+  padding: 7% 13%;
+}
 
 /*******parametres teddies***/
 .nounours {
@@ -123,14 +120,7 @@ nav a:focus-within {
   width: 100%;
   height: auto;
 }
-/******parametres camera*****/
-.cameras {
-  display: flex;
-}
-/********parametres meubles****/
-.meubles {
-  display: flex;
-}
+
 /*********main***************/
 
 article {
@@ -303,17 +293,19 @@ p {
     display: flex;
     flex-direction: column;
   }
-  .cameras {
-    display: flex;
+}
+/*******media queries (index page)******/
+@media (max-width: 612px) {
+  .menu {
     flex-direction: column;
+    width: 100%;
   }
-  .meubles {
-    display: flex;
-    flex-direction: column;
+  .menu_prod {
+    width: 100%;
   }
 }
 
-/*****media general artcile, pictures,etc...***/
+/*****media general article, pictures,etc...***/
 
 @media (max-width: 1024px) {
   .nounours {

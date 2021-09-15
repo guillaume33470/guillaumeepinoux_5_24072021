@@ -139,10 +139,10 @@ if (produitLocalStorage == 0) {
                           />
                           <i class="fab fa-cc-paypal fa-2x"></i>
                         </div>
-                        <div>
+                        <div class="condition_generales">
                           <input type="checkbox" id="condbox" class="zoneDeSaisie" required/>
                             J'ai lu et j'accepte
-                                <a href="conditions.html">les conditions générales de vente.</a>
+                                <a class="conditions_html" href="cgv.html">les conditions générales de vente.</a>
                         </div>
                         <button onclick="validationCommande(event)" type="button" id="confirme_commande" name="commander">
                           Commander
