@@ -63,7 +63,7 @@ if (produitLocalStorage == 0) {
                             id="lastname"
                             name="nom"
                             class="form-control"
-                            value="Dupont"
+                            placeholder="Dupont"
                             required
                           />
                         </div>
@@ -74,7 +74,7 @@ if (produitLocalStorage == 0) {
                             id="firstname"
                             name="prenom"
                             class="form-control"
-                            value="Jean"
+                            placeholder="Jean"
                             required
                           />
                         </div>
@@ -85,7 +85,7 @@ if (produitLocalStorage == 0) {
                             id="email"
                             name="email"
                             class="form-control"
-                            value="votre mail@gmail.com"
+                            placeholder="votre mail@gmail.com"
                             required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                           />
@@ -97,7 +97,7 @@ if (produitLocalStorage == 0) {
                             id="adress"
                             name="adresse"
                             class="form-control"
-                            value="32 avenue Georges Brassens"
+                            placeholder="32 avenue Georges Brassens"
                             required
                           />
                         </div>
@@ -108,7 +108,7 @@ if (produitLocalStorage == 0) {
                             id="city"
                             name="ville"
                             class="form-control"
-                            value="Bordeaux"
+                            placeholder="Bordeaux"
                             required
                           />
                         </div>
@@ -172,9 +172,6 @@ if (totalPrice == null) {
 
 /******function clear article**********/
 
-// const viderArticleBtn = document.getElementsByClassName(".fas fa-trash");
-// viderArticleBtn.addEventListener("click", cleararticle);
-
 function cleararticle(event) {
   let produitLocalStorage = JSON.parse(localStorage.getItem("productKey"));
   produitLocalStorage = produitLocalStorage.filter(
@@ -219,9 +216,7 @@ function validationCommande(event) {
   let adress = document.getElementById("adress").value;
   let city = document.getElementById("city").value;
   let contact = {
-    // ICI
     firstName: firstname,
-    // ICI
     lastName: lastname,
     address: adress,
     city: city,
@@ -254,6 +249,7 @@ function validationCommande(event) {
         if (response.ok) {
           localStorage.setItem("idresponse", dataResponse.orderId);
           alert(dataResponse.orderId);
+          localStorage.setItem("contact", JSON.stringify(contact));
           window.location = "confirmation.html";
         } else {
           console.log("KO");

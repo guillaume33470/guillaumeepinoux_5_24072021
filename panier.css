@@ -176,9 +176,10 @@ i {
 .condition_generales {
   font-size: 1.9rem;
   margin-bottom: 15px;
+  color: #fff;
 }
 .conditions_html:hover {
-  color: #2be7ff;
+  color: #05058a;
   font-weight: 900;
 }
 /******boutton commander********************/
@@ -200,7 +201,7 @@ i {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 /******footer***********/
 footer {
