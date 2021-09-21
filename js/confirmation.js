@@ -11,16 +11,17 @@ console.log(totalPrice);
 
 document.querySelector(
   "#recapLivraisonAdresse"
-).textContent = `${contact.firstName}  
+).textContent = `${contact.firstName},  
                  ${contact.lastName}
                  ${contact.address}
+                 ${contact.codePostal}
                  ${contact.city}`;
 
 function deleteKey(key) {
   localStorage.removeItem(key);
 }
 
-deleteKey("totalPrice");
-deleteKey("productKey");
-deleteKey("idresponse");
-deleteKey("contact");
+// deleteKey("totalPrice");
+// deleteKey("productKey");
+// deleteKey("idresponse");
+// deleteKey("contact");

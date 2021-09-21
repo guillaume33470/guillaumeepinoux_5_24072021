@@ -271,6 +271,14 @@ p {
 #TotalPriceConfirm {
   color: #f43c3c;
 }
+.adresse_de_livraison {
+  text-align: center;
+}
+/*****recapLivraisonAdresse**********/
+#recapLivraisonAdresse {
+  display: inline-block;
+  font-weight: bolder;
+}
 
 /**********************************************media queries**********************************************/
 

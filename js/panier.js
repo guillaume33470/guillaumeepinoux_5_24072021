@@ -102,6 +102,17 @@ if (produitLocalStorage == 0) {
                           />
                         </div>
                         <div class="form-group">
+                        <label for="codePostal"> Code postal </label>
+                        <input
+                          type="text"
+                          id="codePostal"
+                          name="codePostal"
+                          class="form-control"
+                          placeholder="33000"
+                          required
+                        />
+                      </div>
+                        <div class="form-group">
                           <label for="city"> Ville </label>
                           <input
                             type="text"
@@ -203,7 +214,7 @@ function clearAll(event) {
 /******function clear pannier********/
 
 function clearAll(event) {
-  alert();
+  alert("Votre panier va etre nettoyer");
   localStorage.removeItem("productKey");
   localStorage.removeItem("totalPrice");
   window.location.href = "panier.html";
@@ -215,10 +226,12 @@ function validationCommande(event) {
   let email = document.getElementById("email").value;
   let adress = document.getElementById("adress").value;
   let city = document.getElementById("city").value;
+  let codePostal = document.getElementById("codePostal").value;
   let contact = {
     firstName: firstname,
     lastName: lastname,
     address: adress,
+    codePostal: codePostal,
     city: city,
     email: email,
   };
