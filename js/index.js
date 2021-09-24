@@ -93,6 +93,7 @@ function createPanier(event) {
                     <button onclick="ajoutmessageconfirm(event)" id="button_Panier" class="btn" >Ajouter au panier</button>
                   </article>
                 </div>`;
+      console.log(cards);
       popup.innerHTML = cards;
       //fonction du boutton pour l'ajout au localStorage (données du nounours : prix , quantité, nom, image)
       let btn = document.getElementById("button_Panier");
@@ -129,8 +130,6 @@ function createPanier(event) {
         } else {
           for (e = 0; e < produitLocalStorage.length; e++) {
             if (produitLocalStorage[e].id == detailProduit.id) {
-              // console.log("Ce produit est déjà présent dans le panier");
-              // alert("Ce produit est déjà présent dans le panier");
               let quantityOfProductInLocalStorage = parseInt(
                 produitLocalStorage[e].quantity
               );
